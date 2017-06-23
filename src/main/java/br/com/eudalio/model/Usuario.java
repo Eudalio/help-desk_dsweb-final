@@ -1,6 +1,8 @@
 package br.com.eudalio.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,6 +30,10 @@ public class Usuario {
 	
 	@NotNull
 	protected String email;
+	
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	protected TipoUsuario tipo;
 	
 	public Usuario() {}
 
@@ -83,6 +89,14 @@ public class Usuario {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public TipoUsuario getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoUsuario tipo) {
+		this.tipo = tipo;
 	}
 	
 }
