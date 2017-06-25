@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity(name="tecnicos")
-public class Tecnico extends Usuario {
+public class Tecnico extends Usuario implements UsuarioAutenticavel {
 	
 	@NotNull
 	@Size(max=11, message="Campo cpf deve ter exatamente {max} caracteres")
@@ -50,5 +50,12 @@ public class Tecnico extends Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	@Override
+	public boolean autentica(String username, String senha) {
+		if(this.getSenha() == senha && this.getUsername() == username && username != null && senha != null)
+			return true;
+		return false;
 	}
 }

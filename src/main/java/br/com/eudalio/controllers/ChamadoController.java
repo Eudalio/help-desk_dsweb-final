@@ -22,10 +22,7 @@ public class ChamadoController {
 	@Autowired
 	private ChamadoRepository chamadoRepository;
 	
-	@RequestMapping("/")
-	public String home(){
-		return "forward:/chamados";
-	}
+	
 	
 	@RequestMapping("/chamados")
 	public String lista(Model model){

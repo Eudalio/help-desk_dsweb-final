@@ -3,7 +3,7 @@ package br.com.eudalio.model;
 import javax.persistence.Entity;
 
 @Entity(name="clientes")
-public class Cliente extends Usuario {
+public class Cliente extends Usuario implements UsuarioAutenticavel {
 	private String cnpj;
 	
 	private String nome_empresa;
@@ -81,5 +81,12 @@ public class Cliente extends Usuario {
 
 	public void setCep(String cep) {
 		this.cep = cep;
+	}
+
+	@Override
+	public boolean autentica(String username, String senha) {
+		if(this.getSenha() == senha && this.getUsername() == username && username != null && senha != null)
+			return true;
+		return false;
 	}
 }

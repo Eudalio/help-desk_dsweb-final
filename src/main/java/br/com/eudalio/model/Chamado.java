@@ -18,8 +18,6 @@ public class Chamado {
 	
 	private Date data_inicio;
 	private Date data_encerrado;
-	private Date horario_inicio;
-	private Date horario_encerrado;
 	
 	@NotNull 
 	@Size(min=5, max=300, message="A descrição deve ter entre {min} e {max} caracteres")
@@ -39,8 +37,6 @@ public class Chamado {
 		setCodigo(codigo);
 		setData_inicio(dt_inicio);
 		setData_encerrado(dt_encerrado);
-		setHorario_inicio(hr_inicio);
-		setHorario_encerrado(hr_encerrado);
 		setDescricao(descricao);
 		setStatus(key);
 	}
@@ -64,18 +60,7 @@ public class Chamado {
 	public void setData_encerrado(Date data_encerrado) {
 		this.data_encerrado = data_encerrado;
 	}
-	public Date getHorario_inicio() {
-		return horario_inicio;
-	}
-	public void setHorario_inicio(Date horario_inicio) {
-		this.horario_inicio = horario_inicio;
-	}
-	public Date getHorario_encerrado() {
-		return horario_encerrado;
-	}
-	public void setHorario_encerrado(Date horario_encerrado) {
-		this.horario_encerrado = horario_encerrado;
-	}
+	
 	public String getDescricao() {
 		return descricao;
 	}
