@@ -59,7 +59,7 @@
 			</ul>
 		</div>
 		<div class="col-md-9">
-			<form:form method="POST" action="/login" class="form-signin">
+			<form:form method="POST" action="/login" modelAttribute="usuario" class="form-signin">
 				<div class="panel-heading">
 					<h2 class="form-heading">Login</h2>
 				</div>
@@ -77,12 +77,12 @@
 				
 					<div class="form-group">
 						<label for="username">Usuário</label>
-						<form:input name="username" id="username" type="text" path="username" cssClass="form-control" />
+						<input name="username" class="form-control" id="username" type="text" />
 					</div>
 					
 					<div class="form-group">
 						<label for="senha">Senha</label>
-						<form:input type="password" path="senha" cssClass="form-control" id="senha" name="senha" />
+						<input type="password" class="form-control" id="senha" name="senha" />
 					</div>
 						<c:if test="${not empty error}">
 							<div class="alert alert-danger alert-dismissible" role="alert">

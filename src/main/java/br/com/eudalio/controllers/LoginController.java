@@ -28,8 +28,8 @@ public class LoginController {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 
-	@RequestMapping("/home")
-	public ModelAndView home(){
+	@RequestMapping("/show_login")
+	public ModelAndView show_login(){
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("usuario", new Usuario());
 		mv.setViewName("form_login");
@@ -44,7 +44,7 @@ public class LoginController {
 		if(logout != null)
 			model.addAttribute("msg", "Deslogou");
 		
-		return "login";
+		return "form_login";
 	}
 	
 //	@RequestMapping(value="/cadastrar", method = RequestMethod.POST)

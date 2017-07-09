@@ -4,6 +4,11 @@ import javax.persistence.Entity;
 
 @Entity(name="clientes")
 public class Cliente extends Usuario implements UsuarioAutenticavel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private String cnpj;
 	
 	private String nome_empresa;

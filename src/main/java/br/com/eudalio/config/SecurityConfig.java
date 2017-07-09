@@ -1,4 +1,4 @@
-package br.com.eudalio.security;
+package br.com.eudalio.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +24,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 		http
 			
 			.authorizeRequests()
-				.antMatchers("/").authenticated()
+				.antMatchers("/", "/cadastrar").permitAll()
 				.antMatchers("/img**", "/js**", "/css**").permitAll()
 				.anyRequest()
 					.authenticated()

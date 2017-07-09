@@ -11,6 +11,6 @@ public class HomeController
    @RequestMapping("/")
    public ModelAndView index()
    {
-      return new ModelAndView("redirect:/home");
+      return new ModelAndView("redirect:/show_login");
    }
 }

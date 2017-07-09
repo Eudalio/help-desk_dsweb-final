@@ -7,6 +7,11 @@ import javax.validation.constraints.Size;
 @Entity(name="admin")
 public class Admin extends Usuario implements UsuarioAutenticavel{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@NotNull
 	@Size(max=11, message="Campo cpf deve ter exatamente {max} caracteres")
 	private String cpf;
