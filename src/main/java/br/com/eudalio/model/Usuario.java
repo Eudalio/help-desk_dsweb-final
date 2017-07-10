@@ -45,6 +45,10 @@ public class Usuario implements UserDetails {
 	private boolean habilitado;
 	
 	public Usuario() {}
+	
+	public Usuario(int id){
+		this.id = id;
+	}
 
 	public Usuario(int id, String username, String senha) {
 		this.id = id;

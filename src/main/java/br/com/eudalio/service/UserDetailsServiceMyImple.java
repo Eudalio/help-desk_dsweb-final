@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import br.com.eudalio.model.Usuario;
 
 @Service
-public class UserDetailsServico implements UserDetailsService {
+public class UserDetailsServiceMyImple implements UserDetailsService {
 
 	@Autowired
 	private UsuarioService usuarioService;
