@@ -21,13 +21,13 @@
 	<c:if test="${not empty usuarios}">
 	<table id="tabela_usuarios" class="table table-hover">
 		<thead>
-			<tr><th>Código</th><th>Descrição</th><th>Status</th></tr>
+			<tr><th>Nome</th><th>E-mail</th><th>Tipo</th></tr>
 		</thead>
 		<tbody>
-		<c:forEach var="c" items="${usuarios}">
-			<tr><td>${c.codigo}</td><td>${c.descricao}</td><td>${c.status}</td>
-			<td><a href="/usuarios/${c.codigo}/update" class="btn btn-primary">Altera</a></td>
-			<td><a href="/usuarios/${c.codigo}/delete" class="btn btn-danger" onclick="return confirm('Confirma remoção?')" >Deleta</a></td>
+		<c:forEach var="u" items="${usuarios}">
+			<tr><td>${u.nome}</td><td>${u.email}</td><td>${u.tipo}</td>
+			<td><a href="/usuarios/${u.id}/update" class="btn btn-primary">Alterar</a></td>
+			<td><a href="/usuarios/${u.id}/delete" class="btn btn-danger" onclick="return confirm('Confirma remoção?')" >Deleta</a></td>
 			</tr>
 		</c:forEach>
 		</tbody>

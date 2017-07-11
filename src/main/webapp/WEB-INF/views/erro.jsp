@@ -1,5 +1,3 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
@@ -7,7 +5,7 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>Login</title>
+	<title>Ocorreu um erro</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
@@ -18,19 +16,8 @@
 				<c:import url="menu_bar.jsp"></c:import>
 				
 				<div class="col-md-9">
-					<form:form method="post" modelAttribute="chamado" action="${url_base}${acao}">
-						<form:input path="codigo" type="hidden"  />
-						
-						<spring:bind path="descricao">
-						<div class="form-group ${status.error ? 'has-error' : ''}">
-							<form:label path="descricao">Descrição</form:label>
-							<form:input path="descricao" type="text" cssClass="form-control" />
-							<form:errors path="descricao" />
-						</div>
-						</spring:bind>
-						
-						<button type="submit" class="btn btn-primary">Salvar</button>
-					</form:form>
+					<h1 class="jumbotron">Ocorreu um erro! Entre em contato com o Administrador do sistema!</h1>
+					<h2 class="jumbotron">${erro}</h2>
 				</div>
 			</div>
 		</div>

@@ -19,71 +19,47 @@
 				<div class="col-md-9">
 					<form:form method="post" modelAtribute="usuario" action="/usuarios">
 					
-						<input path="codigo" type="hidden"  />
+						<input name="id" type="hidden"  />
 					
-						<spring:bind path="usuario">
 							<div class="form-group ${status.error ? 'has-error' : ''}">
 								<label for="email">E-mail: </label>
 								<input type="text" class="form-control" />
-								<form:errors path="email" />
+								<spring:hasBindErrors name="email"/> 
 							</div>
-						</spring:bind>
 						
-						<spring:bind path="telefone">
 							<div class="form-group ${status.error ? 'has-error' : ''}">
-								<form:label path="telefone">Telefone: </form:label>
-								<form:input path="telefone" type="text" cssClass="form-control" />
+								<label for="telefone">Telefone: </label>
+								<input name="telefone" type="number" class="form-control" />
 								<form:errors path="telefone" />
 							</div>
-						</spring:bind>
 					
-						<spring:bind path="username">
+					
 							<div class="form-group ${status.error ? 'has-error' : ''}">
-								<form:label path="username">Username: </form:label>
-								<form:input path="username" type="text" cssClass="form-control" />
+								<label for="username">Username: </label>
+								<input name="username" type="text" class="form-control" />
 								<form:errors path="username" />
 							</div>
-						</spring:bind>
-						
-						<spring:bind path="senha">
+					
 							<div class="form-group ${status.error ? 'has-error' : ''}">
-								<form:label path="senha">Senha: </form:label>
-								<form:input path="senha" type="text" cssClass="form-control" />
+								<label for="senha">Senha: </label>
+								<input name="senha" type="password" class="form-control" />
 								<form:errors path="senha" />
 							</div>
-						</spring:bind>
+							
+<%-- 							<div class="form-group ${status.error ? 'has-error' : ''}"> --%>
+<!-- 								<label for="nome">Nome: </label> -->
+<!-- 								<input name="nome" type="text" class="form-control" /> -->
+<%-- 								<form:errors path="nome" /> --%>
+<!-- 							</div> -->
 						
-						<spring:bind path="nome">
 							<div class="form-group ${status.error ? 'has-error' : ''}">
-								<form:label path="nome">Nome: </form:label>
-								<form:input path="nome" type="text" cssClass="form-control" />
-								<form:errors path="nome" />
-							</div>
-						</spring:bind>
-						
-						<spring:bind path="nome">
-							<div class="form-group ${status.error ? 'has-error' : ''}">
-								<form:label path="nome">Nome: </form:label>
-								<form:input path="nome" type="text" cssClass="form-control" />
-								<form:errors path="nome" />
-							</div>
-						</spring:bind>
-						
-						<spring:bind path="tipo">
-							<div class="form-group ${status.error ? 'has-error' : ''}">
-								<form:label path="tipo">Tipo: </form:label>
-								<form:input path="tipo" type="text" cssClass="form-control" />
+								<label for="tipo">Tipo: </label>
+								<input name="tipo" type="text" class="form-control" />
 								<form:errors path="tipo" />
 							</div>
-						</spring:bind>
 						
-<%-- 						<spring:bind path="nome">
-							<div class="form-group ${status.error ? 'has-error' : ''}">
-								<form:label path="nome">Nome: </form:label>
-								<form:input path="nome" type="text" cssClass="form-control" />
-								<form:errors path="nome" />
-							</div>
-						</spring:bind> --%>
+							<button type="submit" class="btn btn-primary">Salvar</button>
+						
 					</form:form>
 				</div>
 			</div>
